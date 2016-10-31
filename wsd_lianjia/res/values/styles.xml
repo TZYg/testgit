@@ -1,0 +1,101 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- 基本文字大小为14sp -->
+    <!-- 标题文字大小为20sp -->
+    <!-- 注释文字大小为12sp -->
+
+
+    <!-- 基本标题框高度为40dp -->
+
+    <style name="text_base_font_size_12sp">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/black_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_base_font_size_14sp">
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/black_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_base_font_size_16sp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_base_font_size_18sp">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_base_font_size_20sp">
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textColor">@color/black_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_base_font_size_22sp">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/black_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text_base_font_size_24sp">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black_light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="listview_base_yellow_light_divider">
+        <item name="android:divider">@drawable/inset_listview_divider_yellow_light_bg</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:scrollbars">@null</item>
+    </style>
+
+    <!-- textveiw标题栏 -->
+    <style name="textview_title_bar_14sp_normal">
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/black_light</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/title_bar_height_normal</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+    
+    <!-- checkBox样式 -->
+    <style name="checkBox_style_12sp_normal">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:checked">false</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:background">@drawable/selector_yellow_light_or_black_light_strock_bg</item>
+        <item name="android:textColor">@color/selector_yellow_or_black_light_textcolor</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+</resources>

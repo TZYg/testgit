@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/contains"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height_normal"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="8"
+            android:background="@drawable/shape_base_yellow_light_bg"
+            android:orientation="horizontal" >
+            
+
+            <TextView
+                android:id="@+id/activity_search_menu_textview"
+                style="@style/text_base_font_size_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableRight="@drawable/down_pull"
+                android:gravity="left|center_vertical"
+                android:drawablePadding="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="二手房" />
+            
+
+            <EditText
+                android:id="@+id/activity_search_bar"
+                style="@style/text_base_font_size_12sp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="8"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:hint="请输入小区名称和商圈名称"
+                android:paddingLeft="5dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/activity_search_cancel"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:text="取消" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/activity_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/contains"
+        android:background="@color/gray_light" />
+
+    <ListView
+        android:id="@+id/activity_search_listview_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/activity_search_view"
+        android:divider="@color/gray_light"
+        android:dividerHeight="0.5dp"
+        android:scrollbars="@null" >
+    </ListView>
+
+</RelativeLayout>

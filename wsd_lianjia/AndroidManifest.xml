@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wsd.lianjia"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="23" />
+
+    <application
+        android:name="com.wsd.lianjia.application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+
+        <!-- 满屏效果 -->
+        <activity
+            android:name="com.wsd.lianjia.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.wsd.lianjia.activity.GuideActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wsd.lianjia.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wsd.lianjia.activity.SelectCityActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wsd.lianjia.activity.SearchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.wsd.lianjia.activity.SearchDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>

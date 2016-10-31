@@ -1,0 +1,1230 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+<com.wsd.lianjia.customview.CustomScrollView
+        android:id="@+id/home_fragment_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="@null" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- 背景图片 -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/homepage_bg" />
+
+            <!-- 正文内容 -->
+
+            <LinearLayout
+                android:id="@+id/home_fragment_contains"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="-150dp"
+                android:orientation="vertical" >
+
+                <!-- 头部城市选择容器 -->
+
+                <RelativeLayout
+                    android:id="@+id/home_fragment_city_contains"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:visibility="visible" >
+
+                    <!-- 城市按钮 -->
+
+                    <TextView
+                        android:id="@+id/home_fragment_city"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/textview_base_bg"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/down_pull"
+                        android:text="杭州" />
+
+                    <ImageButton
+                        android:id="@+id/home_fragment_search_button"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/imagebutton_base_bg"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_search_home_fragment" />
+                    <!-- 城市选择结束 -->
+                </RelativeLayout>
+
+                <!-- 三个菜单选择开始 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/contains_bg"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <!-- 三个radiobutton -->
+
+                    <RadioGroup
+                        android:id="@+id/home_fragment_radiogroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/home_fragment_radiobutton_maifang"
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_first_fragment_radiobutton_bg"
+                            android:button="@null"
+                            android:checked="true"
+                            android:padding="10dp"
+                            android:text="我要买房" />
+
+                        <RadioButton
+                            android:id="@+id/home_fragment_radiobutton_zufang"
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_first_fragment_radiobutton_bg"
+                            android:button="@null"
+                            android:padding="10dp"
+                            android:text="我要租房" />
+
+                        <RadioButton
+                            android:id="@+id/home_fragment_radiobutton_fangzhu"
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector_first_fragment_radiobutton_bg"
+                            android:button="@null"
+                            android:padding="10dp"
+                            android:text="我是房主" />
+
+                        <!-- 三个radiobutton -->
+                    </RadioGroup>
+
+                    <!-- 三个不同内容的总容器 -->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <!-- 我要买房 -->
+
+                        <LinearLayout
+                            android:id="@+id/home_fragment_three_menu_woyaomaifang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="visible" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <!-- 4个小按钮 -->
+
+                                <TextView
+                                    android:id="@+id/home_fragment_ershoufang"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="二手房" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_xinfang"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="新房" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_xuequ"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="学区" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_haiwaifangchan"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="海外房产" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <!-- 4个小按钮 -->
+
+                                <TextView
+                                    android:id="@+id/home_fragment_dituzhapfang"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="地图找房" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_chachengjao"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="查成交" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_chafangjia"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="查房价" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_fangchanzhinan"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="房产指南" />
+                            </LinearLayout>
+
+                            <!-- 我要买房结束 -->
+                        </LinearLayout>
+
+                        <!-- 我要租房 -->
+
+                        <LinearLayout
+                            android:id="@+id/home_fragment_three_contains_zufang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="invisible" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <TextView
+                                    android:id="@+id/home_fragment_putongzufang"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="普通租房" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_dituzufang"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="地图租房" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_ditiezufang"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="地铁租房" />
+                            </LinearLayout>
+
+                            <!-- 分割线 -->
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/gray_light"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp" />
+
+                            <!-- 经纪人、门店、房源数量数据显示 -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="3"
+                                        android:text="10万+"
+                                        android:textSize="26sp" />
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="专业经纪人" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        style="@style/text_base_font_size_18sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="3"
+                                        android:text="8000+"
+                                        android:textSize="26sp" />
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="威士德门店" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="3"
+                                        android:text="30万+"
+                                        android:textSize="26sp" />
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="在线租房套数" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- 我要租房结束 -->
+                        </LinearLayout>
+
+                        <!-- 我是房东 -->
+
+                        <LinearLayout
+                            android:id="@+id/home_fragment_three_contains_fangzhu"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="invisible" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <TextView
+                                    android:id="@+id/home_fragment_woyaomaifang"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="我要卖房" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_woyaochuzu"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="我要出租" />
+
+                                <TextView
+                                    android:id="@+id/home_fragment_zixunzhuanjia"
+                                    style="@style/text_base_font_size_14sp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:drawablePadding="5dp"
+                                    android:drawableTop="@drawable/ic_launcher"
+                                    android:text="咨询专家" />
+                            </LinearLayout>
+
+                            <!-- 分割线 -->
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/gray_light"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp" />
+
+                            <!-- 经纪人、门店、房源数量数据显示 -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="3"
+                                        android:text="10万+"
+                                        android:textSize="26sp" />
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="专业经纪人" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="3"
+                                        android:text="8000+"
+                                        android:textSize="26sp" />
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="威士德门店" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="3"
+                                        android:text="25000+"
+                                        android:textSize="26sp" />
+
+                                    <TextView
+                                        style="@style/text_base_font_size_14sp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="每天带看次数" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- 我是房东结束 -->
+                        </LinearLayout>
+
+                        <!-- 三个不同内容的总容器 -->
+                    </RelativeLayout>
+
+                    <!-- 三个菜单选择结束 -->
+                </LinearLayout>
+
+                <!-- 二手房行情 -->
+
+                <TextView
+                    android:id="@+id/home_fragment_text_ershoufanghangqing"
+                    style="@style/text_base_font_size_20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_yellow_light_bottom_line_bg"
+                    android:gravity="left|bottom"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:text="杭州二手房行情"
+                    android:visibility="visible" />
+
+                <TextView
+                    style="@style/text_base_font_size_18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:text="后续完善"
+                    android:visibility="visible" />
+                <!-- 二手房行情 -->
+
+
+                <!-- 常用工具 -->
+
+                <TextView
+                    android:id="@+id/home_fragment_text_changyonggongju"
+                    style="@style/text_base_font_size_20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_yellow_light_bottom_line_bg"
+                    android:gravity="left|bottom"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:text="常用工具"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
+
+                    <TextView
+                        android:id="@+id/home_fragment_baike"
+                        style="@style/text_base_font_size_18sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="百科" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_xiaoqu"
+                        style="@style/text_base_font_size_18sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="小区" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_jingjiren"
+                        style="@style/text_base_font_size_18sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="找经纪人" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_mendian"
+                        style="@style/text_base_font_size_18sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="门店" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_jisuanqi"
+                        style="@style/text_base_font_size_18sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="计算器" />
+                </LinearLayout>
+                <!-- 常用工具结束 -->
+
+
+                <!-- 房产头条 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_yellow_light_bottom_line_bg"
+                    android:visibility="visible" >
+
+                    <TextView
+                        style="@style/text_base_font_size_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="房产头条" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_fangchantoutiao_more"
+                        style="@style/text_base_font_size_12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/right_arrow_black"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="10dp"
+                        android:text="更多" />
+                </RelativeLayout>
+
+                <!-- listview:每个item-height=100dp -->
+
+                <ListView
+                    android:id="@+id/home_fragment_listview_fangchantoutiao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/gray_light"
+                    android:dividerHeight="0.5dp"
+                    android:scrollbars="@null"
+                    android:visibility="visible" >
+                </ListView>
+                <!-- 房产头条结束 -->
+
+
+                <!-- 什么房值得购买 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_yellow_light_bottom_line_bg"
+                    android:visibility="visible" >
+
+                    <TextView
+                        style="@style/text_base_font_size_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="什么房值得购买" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_zhidegoumai_more"
+                        style="@style/text_base_font_size_12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/right_arrow_black"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="10dp"
+                        android:text="更多" />
+                </RelativeLayout>
+
+                <!-- 横向的scrollview，添加几张图片 -->
+
+                <HorizontalScrollView
+                    android:id="@+id/home_fragment_horizontalScorllview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="@null" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:visibility="visible" >
+
+                        <ImageView
+                            android:id="@+id/image1"
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_launcher" />
+
+                        <ImageView
+                            android:id="@+id/image2"
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_launcher" />
+
+                        <ImageView
+                            android:id="@+id/image3"
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_launcher" />
+
+                        <ImageView
+                            android:id="@+id/image4"
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_launcher" />
+
+                        <ImageView
+                            android:id="@+id/image5"
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_launcher" />
+
+                        <ImageView
+                            android:id="@+id/image6"
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_launcher" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+                <!-- 什么房值得购买结束 -->
+
+
+                <!-- 房产知识 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_yellow_light_bottom_line_bg"
+                    android:visibility="visible" >
+
+                    <TextView
+                        android:id="@+id/home_fragment_fangchanzhishi"
+                        style="@style/text_base_font_size_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="房产知识" />
+
+                    <TextView
+                        style="@style/text_base_font_size_12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/home_fragment_fangchanzhishi"
+                        android:layout_toRightOf="@+id/home_fragment_fangchanzhishi"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:text="全、新、准的房产百科" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/home_fragment_textview_fnagchanzhishi_ershoufang"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="二手房" />
+                    <!-- 分割线 -->
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_light"
+                        android:paddingBottom="20dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="20dp" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_textview_fangchanzhishi_xinfang"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="新房" />
+                    <!-- 分割线 -->
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_light"
+                        android:paddingBottom="20dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="20dp" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_textview_fangchanzhishi_haiwaimaifang"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="海外买房" />
+                    <!-- 分割线 -->
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_light"
+                        android:paddingBottom="20dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="20dp" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_textview_fangchanzhishi_maifang"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="卖房" />
+                    <!-- 分割线 -->
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_light"
+                        android:paddingBottom="20dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="20dp" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_fangchanzhishi_textview_huanfang"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/ic_launcher"
+                        android:text="换房" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
+
+                    <ImageButton
+                        android:id="@+id/home_fragment_fangchanzhishi_ershoufangshuyu"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_launcher" />
+
+                    <ImageButton
+                        android:id="@+id/home_fragment_fangchanzhishi_maifangchengben"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_launcher" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
+
+                    <ImageButton
+                        android:id="@+id/home_fragment_fangchanzhishi_huanfang"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_launcher" />
+
+                    <ImageButton
+                        android:id="@+id/home_fragment_fangchanzhishi_xinshoumaifang"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_launcher" />
+                </LinearLayout>
+                <!-- 房产知识结束 -->
+
+
+                <!-- 热门活动 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_yellow_light_bottom_line_bg"
+                    android:visibility="visible" >
+
+                    <TextView
+                        style="@style/text_base_font_size_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="热门活动" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_remenhuodong_more"
+                        style="@style/text_base_font_size_12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/right_arrow_black"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="10dp"
+                        android:text="更多" />
+                </RelativeLayout>
+
+                <!-- 横向的scrollview，添加几张图片 -->
+
+                <HorizontalScrollView
+                    android:id="@+id/home_fragment_remenhuodong_horizontalScorllview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="@null"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/home_fragment_remenhuodong_image1"
+                            android:layout_width="260dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_launcher" />
+
+                        <ImageView
+                            android:id="@+id/home_fragment_remenhuodong_image2"
+                            android:layout_width="260dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_launcher" />
+
+                        <ImageView
+                            android:id="@+id/home_fragment_remenhuodong_image3"
+                            android:layout_width="260dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_launcher" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+                <!-- 热门活动结束 -->
+
+
+                <!-- 选择威士德 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_yellow_light_bottom_line_bg"
+                    android:visibility="visible" >
+
+                    <TextView
+                        android:id="@+id/home_fragment_xuanzeweishide"
+                        style="@style/text_base_font_size_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="选择威士德" />
+
+                    <TextView
+                        style="@style/text_base_font_size_12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/home_fragment_xuanzeweishide"
+                        android:layout_toRightOf="@+id/home_fragment_xuanzeweishide"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:text="让买房、卖房不再难" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
+
+                    <ImageView
+                        android:id="@+id/home_fragment_xuanzeweishide_image1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_launcher" />
+
+                    <ImageView
+                        android:id="@+id/home_fragment_xuanzeweishide_image2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_launcher" />
+
+                    <ImageView
+                        android:id="@+id/home_fragment_xuanzeweishide_image3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_launcher" />
+                </LinearLayout>
+                <!-- 选择威士德结束 -->
+
+
+                <!-- 为你推荐二手房 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/shape_yellow_light_bottom_line_bg" >
+
+                    <TextView
+                        style="@style/text_base_font_size_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="为你推荐二手房" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_tuijianershoufang_more"
+                        style="@style/text_base_font_size_12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/right_arrow_black"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="10dp"
+                        android:text="更多" />
+                </RelativeLayout>
+                <!-- 推荐二手房listview:总共显示三条，每条的高度定位200dp -->
+
+                <ListView
+                    android:id="@+id/home_fragment_tuijianershoufang_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:divider="@color/gray_light"
+                    android:dividerHeight="0.5dp"
+                    android:scrollbars="@null" >
+                </ListView>
+
+                <!-- 为你推荐二手房结束 -->
+
+
+                <!-- 为你推荐新房 -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_yellow_light_bottom_line_bg" >
+
+                    <TextView
+                        style="@style/text_base_font_size_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="left|bottom"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="为你推荐新房" />
+
+                    <TextView
+                        android:id="@+id/home_fragment_tuijianxinfang_more"
+                        style="@style/text_base_font_size_12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/right_arrow_black"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="10dp"
+                        android:text="更多" />
+                </RelativeLayout>
+                <!-- 推荐二手房listview:总共显示三条，每条的高度定位150dp -->
+
+                <ListView
+                    android:id="@+id/home_fragment_tuijianxinfang_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:divider="@color/gray_light"
+                    android:dividerHeight="0.5dp"
+                    android:scrollbars="@null" >
+                </ListView>
+
+                <!-- 为你推荐新房结束 -->
+
+
+                <!-- 正文内容结束 -->
+            </LinearLayout>
+
+            <!-- 外层总容器 -->
+        </LinearLayout>
+    </com.wsd.lianjia.customview.CustomScrollView>
+
+    <!-- 弹出搜索菜单 -->
+
+    <LinearLayout
+        android:id="@+id/home_fragment_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:visibility="invisible" >
+
+        <TextView
+            android:id="@+id/home_fragment_search_view_city"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/down_pull"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="杭州" />
+        <View 
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/gray_light"/>
+        <TextView 
+            android:id="@+id/home_fragment_search_textview"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="match_parent"
+            android:gravity="left|center_vertical"
+            android:drawableLeft="@drawable/icon_search_home_fragment"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/text_base_font_size_14sp"
+            android:text="请输入小区和商圈名称"/>
+    </LinearLayout>
+
+</RelativeLayout>

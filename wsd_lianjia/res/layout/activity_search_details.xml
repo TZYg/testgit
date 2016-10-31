@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/activity_search_details_contains"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height_normal"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_back_left" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="6"
+            android:background="@drawable/shape_base_yellow_light_bg"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_search" />
+
+            <TextView
+                android:id="@+id/activity_search_details_textview"
+                style="@style/text_base_font_size_14sp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:drawablePadding="5dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:text="搜索页面的关键字" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_delete" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_location" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/message" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/activity_search_details_rg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height_normal"
+        android:layout_below="@+id/activity_search_details_contains"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.wsd.lianjia.customview.CustomCanselRadioButton
+            android:id="@+id/activity_search_details_rb_area"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@drawable/icon_down"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="区域" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.wsd.lianjia.customview.CustomCanselRadioButton
+            android:id="@+id/activity_search_details_rb_price"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@drawable/icon_down"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="价格" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.wsd.lianjia.customview.CustomCanselRadioButton
+            android:id="@+id/activity_search_details_rb_type"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@drawable/icon_down"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="房型" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.wsd.lianjia.customview.CustomCanselRadioButton
+            android:id="@+id/activity_search_details_rb_more"
+            style="@style/text_base_font_size_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="@drawable/icon_down"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="更多" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </RadioGroup>
+    <!-- 分割线 -->
+
+    <View
+        android:id="@+id/activity_search_details_fengeixian"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/activity_search_details_rg"
+        android:background="@color/yellow_light" />
+
+    <!-- listview和条件选择布局 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/activity_search_details_fengeixian" >
+
+        <!-- listview -->
+
+        <ListView
+            android:id="@+id/activity_search_details_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/gray_light"
+            android:dividerHeight="0.5dp"
+            android:scrollbars="@null"
+            android:visibility="visible" >
+        </ListView>
+
+        <!-- 条件选择布局 -->
+
+        <LinearLayout
+            android:id="@+id/activity_search_details_condition"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_light_light"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <!-- 条件正文布局容器 -->
+
+            <RelativeLayout
+                android:id="@+id/activity_search_details_conditon_centent_contains"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3" >
+
+                <!-- 区域布局 -->
+
+                <LinearLayout
+                    android:id="@+id/activity_search_details_condition_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="invisible" >
+
+                    <!-- 总共分成3块 -->
+
+
+                    <!-- 区域和地铁 -->
+
+                    <RadioGroup
+                        android:id="@+id/activity_search_details_condition_area_rg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:gravity="left"
+                        android:orientation="vertical"
+                        android:padding="5dp" >
+
+                        <RadioButton
+                            android:id="@+id/activity_search_details_condition_button_area"
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/title_bar_height_normal"
+                            android:button="@null"
+                            android:gravity="left|center_vertical"
+                            android:padding="5dp"
+                            android:text="区域" />
+                        <!-- 分割线 -->
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/activity_search_details_rg"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@color/yellow_light" />
+
+                        <RadioButton
+                            android:id="@+id/activity_search_details_condition_button_ditie"
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/title_bar_height_normal"
+                            android:button="@null"
+                            android:gravity="left|center_vertical"
+                            android:padding="5dp"
+                            android:text="地铁" />
+                        <!-- 分割线 -->
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/activity_search_details_rg"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@color/yellow_light" />
+
+                        <RadioButton
+                            android:id="@+id/activity_search_details_condition_button_nearby"
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/title_bar_height_normal"
+                            android:button="@null"
+                            android:gravity="left|center_vertical"
+                            android:padding="5dp"
+                            android:text="附近" />
+                        <!-- 分割线 -->
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/activity_search_details_rg"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@color/yellow_light" />
+                    </RadioGroup>
+                    <!-- 二级菜单 -->
+
+                    <LinearLayout
+                        android:id="@+id/activity_search_details_condition_arean_listview_one_contains"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:orientation="horizontal" >
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/yellow_light" />
+
+                        <ListView
+                            android:id="@+id/activity_search_details_condition_area_erjicaidan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:divider="@drawable/inset_listview_divider_yellow_light_bg"
+                            android:dividerHeight="1dp"
+                            android:scrollbars="@null" >
+                        </ListView>
+                    </LinearLayout>
+                    <!-- 三级菜单 -->
+
+                    <LinearLayout
+                        android:id="@+id/activity_search_details_condition_arean_listview_two_contains"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/yellow_light" />
+
+                        <ListView
+                            android:id="@+id/activity_search_details_condition_area_sanjicaidan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:divider="@drawable/inset_listview_divider_yellow_light_bg"
+                            android:dividerHeight="1dp"
+                            android:scrollbars="@null" />
+                    </LinearLayout>
+                    <!-- 区域布局结束 -->
+                </LinearLayout>
+                <!-- 价格布局 -->
+
+                <LinearLayout
+                    android:id="@+id/activity_search_details_condition_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:visibility="invisible" >
+
+                    <ListView
+                        android:id="@+id/activity_search_details_condition_price_listview"
+                        style="@style/listview_base_yellow_light_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="5" >
+                    </ListView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/activity_search_details_condition_price_min_price"
+                            style="@style/text_base_font_size_12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="3"
+                            android:background="@drawable/shape_yellow_light_bg"
+                            android:gravity="center"
+                            android:hint="最低价格"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:maxLines="1"
+                            android:padding="5dp" />
+
+                        <TextView
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:text="—" />
+
+                        <EditText
+                            android:id="@+id/activity_search_details_condition_price_max_price"
+                            style="@style/text_base_font_size_12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="3"
+                            android:background="@drawable/shape_yellow_light_bg"
+                            android:gravity="center"
+                            android:hint="最高价格"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:maxLines="1"
+                            android:padding="5dp" />
+
+                        <Button
+                            android:id="@+id/activity_search_details_condition_price_confirm"
+                            style="@style/text_base_font_size_12sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="3"
+                            android:background="@drawable/shape_yellow_light_stroke_bg"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="确定"
+                            android:textColor="@color/yellow_light" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- 价格布局结束 -->
+
+
+                <!-- 房型布局 -->
+
+                <LinearLayout
+                    android:id="@+id/activity_search_details_condition_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:visibility="invisible" >
+
+                    <com.wsd.lianjia.customview.CustomSelectedLinearLayout
+                        android:id="@+id/activity_search_details_condition_type_buxian"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="9"
+                            android:gravity="left|center_vertical"
+                            android:text="不限" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_unselected" />
+                    </com.wsd.lianjia.customview.CustomSelectedLinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow_light" />
+
+                    <com.wsd.lianjia.customview.CustomSelectedLinearLayout
+                        android:id="@+id/activity_search_details_condition_type_yishi"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="9"
+                            android:gravity="left|center_vertical"
+                            android:text="一室" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_unselected" />
+                    </com.wsd.lianjia.customview.CustomSelectedLinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow_light" />
+
+                    <com.wsd.lianjia.customview.CustomSelectedLinearLayout
+                        android:id="@+id/activity_search_details_condition_type_ershi"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="9"
+                            android:gravity="left|center_vertical"
+                            android:text="二室" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_unselected" />
+                    </com.wsd.lianjia.customview.CustomSelectedLinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow_light" />
+
+                    <com.wsd.lianjia.customview.CustomSelectedLinearLayout
+                        android:id="@+id/activity_search_details_condition_type_sanshi"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="9"
+                            android:gravity="left|center_vertical"
+                            android:text="三室" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_unselected" />
+                    </com.wsd.lianjia.customview.CustomSelectedLinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow_light" />
+
+                    <com.wsd.lianjia.customview.CustomSelectedLinearLayout
+                        android:id="@+id/activity_search_details_condition_type_sanshiyishang"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="9"
+                            android:gravity="left|center_vertical"
+                            android:text="三室以上" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_unselected" />
+                    </com.wsd.lianjia.customview.CustomSelectedLinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow_light" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/title_bar_height_normal"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp" >
+
+                        <Button
+                            android:id="@+id/activity_seaarch_details_condition_type_confirg"
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/shape_yellow_light_bg"
+                            android:text="确定"
+                            android:textColor="@color/black_light" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <!-- 房型布局结束 -->
+                <!-- 更多布局 -->
+
+                <LinearLayout
+                    android:id="@+id/activity_search_details_condition_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:visibility="invisible" >
+
+                    <!-- 更多条件明细 -->
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:scrollbars="@null" 
+                        android:layout_marginBottom="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                style="@style/textview_title_bar_14sp_normal"
+                                android:text="朝向" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/yellow_light" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:visibility="visible" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    android:id="@+id/activity_search_details_condition_more_chaodong"
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="朝东" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="朝南" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="朝西" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:visibility="visible" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="朝北" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="南北" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="东西" />
+                            </LinearLayout>
+
+                            <TextView
+                                style="@style/textview_title_bar_14sp_normal"
+                                android:text="面积" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/yellow_light" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="50以下" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="50-70" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="70-90" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="90-120" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="120-140" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="140-160" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="160-200" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="200以上" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:background="@color/white"
+                                    android:text="无意"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+                            <TextView
+                                style="@style/textview_title_bar_14sp_normal"
+                                android:text="标签" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/yellow_light" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="满两年" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="近地铁" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="新上" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="有钥匙" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="不看商住两用" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:background="@color/white"
+                                    android:text="无意"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+                            
+
+                            <TextView
+                                style="@style/textview_title_bar_14sp_normal"
+                                android:text="楼龄" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/yellow_light" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="5年以内" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="10年以内" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="15年以内" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="20年以内" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="20年以上" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:background="@color/white"
+                                    android:text="无意"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+
+                            
+
+                            <TextView
+                                style="@style/textview_title_bar_14sp_normal"
+                                android:text="楼层" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/yellow_light" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="低楼层" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="中楼层" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="高楼层" />
+                            </LinearLayout>
+
+                            
+
+                            <TextView
+                                style="@style/textview_title_bar_14sp_normal"
+                                android:text="装修" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/yellow_light" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="精装修" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="普通装修" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="毛坯房" />
+                            </LinearLayout>
+
+                            
+                            <TextView
+                                style="@style/textview_title_bar_14sp_normal"
+                                android:text="电梯" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/yellow_light" />
+                            
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="有电梯" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:text="无电梯" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1" />
+
+                                <com.wsd.lianjia.customview.CustomAutoSaveDataCheckBox
+                                    style="@style/checkBox_style_12sp_normal"
+                                    android:background="@color/white"
+                                    android:text="无意"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </ScrollView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow_light" />
+
+                    <TextView
+                        android:id="@+id/activity_search_details_conditon_more_delete_all"
+                        style="@style/text_base_font_size_14sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/title_bar_height_normal"
+                        android:text="清除条件" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/yellow_light" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/title_bar_height_normal"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp" >
+
+                        <Button
+                            android:id="@+id/activity_seaarch_details_condition_more_confirg"
+                            style="@style/text_base_font_size_14sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/shape_yellow_light_bg"
+                            android:text="确定"
+                            android:textColor="@color/black_light" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <!-- 更多布局结束 -->
+            </RelativeLayout>
+
+            <!-- 底部透明部分 -->
+
+            <View
+                android:id="@+id/activity_search_details_not_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

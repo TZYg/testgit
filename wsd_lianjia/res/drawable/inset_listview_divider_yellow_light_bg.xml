@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@color/yellow_light"
+    android:insetLeft="10dp"
+    android:insetRight="10dp" >
+    <!-- 插入物，可以设置距离四边距的宽度，可以当作drawable图片资源可使用，背景图可以设置不充满全屏 -->
+
+</inset>
